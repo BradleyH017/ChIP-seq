@@ -1,0 +1,49 @@
+# Bradley 2022
+# ChIP-seq of C11orf53 and Pou2f3 in mouse SCLC cell lines
+# https://www.nature.com/articles/s41586-022-04842-7
+# from https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE186614
+
+# Change dir
+cd /gpfs/igmmfs01/eddie/CCGG-tumour-WGS/BradTemp/ChIP-seq/data
+
+# POU2F3 ChIP in NCIH211
+mkdir POU2F3_NCIH211
+cd POU2F3_NCIH211
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657745/suppl/GSM5657745_NCIH211_POU2F3_Ab1_S9_R1_001.fastq.gz_peaks.narrowPeak.gz
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657745/suppl/GSM5657745_NCIH211_POU2F3_Ab1_S9_R1_001.fastq.gz_tag.ucsc.bigWig
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657746/suppl/GSM5657746_211_POU2F3_ChIP_S1_R1_001.fastq.gz_tag.ucsc.bigWig
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657746/suppl/GSM5657746_NCIH211_POU2F3_ChIP_S1_R1_001.fastq.gz_peaks.narrowPeak.gz
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657747/suppl/GSM5657747_211_POU2F3_Input_S2_R1_001.fastq.gz_tag.ucsc.bigWig
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657747/suppl/GSM5657747_NCIH211_POU2F3_Rb_2_S2_R1_001.fastq.gz_peaks.narrowPeak.gz
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657748/suppl/GSM5657748_211_POU2F3_Rb_2_S2_R1_001.fastq.gz_tag.ucsc.bigWig
+
+# C11orf3 in NCIH211
+cd ../
+mkdir OCAT_NCIH211
+cd OCAT_NCIH211
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657742/suppl/GSM5657742_NCIH211_OCA-T_Ab1_S8_R1_001.fastq.gz_peaks.narrowPeak.gz
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657742/suppl/GSM5657742_NCIH211_OCA-T_Ab1_S8_R1_001.fastq.gz_tag.ucsc.bigWig
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657743/suppl/GSM5657743_NCIH211_OCA-T_Ab2_S7_R1_001.fastq.gz_peaks.narrowPeak.gz
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657743/suppl/GSM5657743_NCIH211_OCA-T_Ab2_S7_R1_001.fastq.gz_tag.ucsc.bigWig
+# 19/07/2022 changes. Also download the input, so we can plot the bigwig along the background
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657740/suppl/GSM5657740_NCIH211_Input_S11_R1_001.fastq.gz_tag.ucsc.bigWig
+
+# C11orf53 in NCIH526
+cd ../
+mkdir OCAT_NCIH526
+cd OCAT_NCIH526
+wget ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657751/suppl/GSM5657751_NCIH526_OCA-T_Ab1_S6_R1_001.fastq.gz_bt2_snstv.sorted_trimmed_rd.bam_peaks.narrowPeak.gz
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657751/suppl/GSM5657751_NCIH526_OCA-T_Ab1_S6_R1_001.fastq.gz_tag.ucsc.bigWig
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657752/suppl/GSM5657752_NCIH526_OCA-T_Ab2_S5_R1_001.fastq.gz_bt2_snstv.sorted_trimmed_rd.bam_peaks.narrowPeak.gz
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657752/suppl/GSM5657752_NCIH526_OCA-T_Ab2_S5_R1_001.fastq.gz_tag.ucsc.bigWig
+# Control (19/07/2022)
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657750/suppl/GSM5657750_526_Input_S6_R1_001.fastq.gz_tag.ucsc.bigWig
+
+# POU2F3 in  NCIH526
+cd ../
+mkdir POU2F3_NCIH526
+cd POU2F3_NCIH526
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657753/suppl/GSM5657753_NCIH526_POU2F3_PF_Ab1_S3_R1_001.fastq.gz_bt2_snstv.sorted_trimmed_rd.bam_peaks.narrowPeak.gz
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657753/suppl/GSM5657753_NCIH526_POU2F3_PF_Ab1_S3_R1_001.fastq.gz_tag.ucsc.bigWig
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657754/suppl/GSM5657754_NCIH526_POU2F3_Rb_2_S2_R1_001.fastq.gz_bt2_snstv.sorted_trimmed_rd.bam_peaks.narrowPeak.gz
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM5657nnn/GSM5657754/suppl/GSM5657754_NCIH526_POU2F3_Rb_2_S2_R1_001.fastq.gz_tag.ucsc.bigWig

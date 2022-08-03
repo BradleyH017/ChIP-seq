@@ -1,0 +1,27 @@
+# Bradley May 2022
+# Intersecting the big wig files for each condition
+
+module load igmm/apps/BEDTools/2.30.0
+cd /exports/igmm/eddie/CCGG-tumour-WGS/BradTemp/ChIP-seq/data
+
+# Move into each directory and combine
+for d in *
+do
+cd $d
+search='*.narrowPeak'
+f1=$(eval find "$search" -print | head -n 1)
+f2=$(eval find "$search" -print | tail -n 1)
+bedtools intersect -a $f1 -b $f2 -sorted > intersect.narrowPeak
+echo "done" $d
+cd ..
+done
+
+
+# If doesn't work
+cd /exports/igmm/eddie/CCGG-tumour-WGS/BradTemp/ChIP-seq/data
+for d in *
+do
+cd $d
+rm intersect.narrowPeak
+cd ..
+done

@@ -1,0 +1,15 @@
+# Bradley May 2022
+# Annotating the peaks from the ChIP seq output
+
+# set up
+module load igmm/apps/homer/4.8
+cd /exports/igmm/eddie/CCGG-tumour-WGS/BradTemp/ChIP-seq/data
+for d in *
+do
+cd $d
+for f in *.narrowPeak
+do
+annotatePeaks.pl $f hg38 > $f.annot
+done
+cd ../
+done
